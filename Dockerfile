@@ -14,10 +14,10 @@ VOLUME ["/opt/mule/logs", "/opt/mule/conf", "/opt/mule/apps", "/opt/mule/domains
 # Define working directory.
 WORKDIR /opt/mule
 
-CMD [ "/opt/mule/bin/mule" ]
+#CMD [ "/opt/mule/bin/mule" ]
 
 # Default http port
 EXPOSE 8081
 
-CMD [ "/opt/mule/bin/mule" ]
+#CMD [ "/opt/mule/bin/mule" ]
 
