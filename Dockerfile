@@ -6,7 +6,7 @@ FROM openjdk:11
 RUN cd ~ && wget https://repository-master.mulesoft.org/nexus/content/repositories/releases/org/mule/distributions/mule-standalone/4.4.0/mule-standalone-4.4.0.tar.gz \
 	&& cd /opt && tar xvzf ~/mule-standalone-4.4.0.tar.gz && rm ~/mule-standalone-4.4.0.tar.gz && ln -s /opt/mule-standalone-4.4.0 /opt/mule
 
-RUN adduser "" 185 root -u 185
+RUN adduser 185 root -u 185
 
 RUN chgrp -R 0 /opt/mule/ && \
     chmod -R g+rwX /opt/mule/
