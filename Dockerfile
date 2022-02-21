@@ -10,6 +10,7 @@ FROM openjdk:11
 WORKDIR /opt
 RUN useradd --user-group --shell /bin/false mule && chown mule /opt 
 USER mule
+
 RUN wget https://repository-master.mulesoft.org/nexus/content/repositories/releases/org/mule/distributions/mule-standalone/4.4.0/mule-standalone-4.4.0.zip \
 	&& unzip *.zip \
 	&& ln -s mule-standalone-4.4.0 mule && rm mule-standalone-4.4.0.zip
@@ -34,7 +35,7 @@ VOLUME ["/opt/mule/logs", "/opt/mule/conf", "/opt/mule/apps", "/opt/mule/domains
 # # Define working directory.
 WORKDIR /opt/mule
 #
-CMD [ "/opt/start.sh" ]
+ENTRYPOINT ["/opt/start.sh"]
 #
 # # use different Default https/http port
 EXPOSE 8881
