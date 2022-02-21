@@ -3,6 +3,9 @@
 
 FROM alpine:latest
 
+RUN apk add openjdk8-jre
+
+
 RUN mkdir /app
 
 ENV MULE_HOME=/app/mule
