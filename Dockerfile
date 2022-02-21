@@ -12,7 +12,7 @@ RUN useradd --user-group --shell /bin/false mule && chown mule /opt
 RUN  chmod -R 777 /opt
 USER mule
 
-ENV MULE_HOME /opt/mule
+ENV MULE_HOME /opt/mule-standalone-4.4.
     
     
 
@@ -34,7 +34,7 @@ RUN chmod -R g+rwX /opt/mule-standalone-4.4.0
 # RUN mule/bin/mule -installLicense mule/conf/mule-ee-license.lic && rm -f mule/conf/mule-ee-license.lic && rm -Rf examples
 #
 # # Define environment variables.
-ENV MULE_HOME /opt/mule
+ENV MULE_HOME /opt/mule-standalone-4.4.
 #
 # # Define mount points.
 VOLUME ["/opt/mule-standalone-4.4.0/logs", "/opt/mule-standalone-4.4.0/conf", "/opt/mule/apps", "/opt/mule-standalone-4.4.0/domains"]
