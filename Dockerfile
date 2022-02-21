@@ -12,6 +12,9 @@ RUN useradd --user-group --shell /bin/false mule && chown mule /opt
 RUN  chmod -R 777 /opt
 USER mule
 
+RUN mkdir /opt/mule-standalone-4.4.0 && \
+    ln -s /opt/mule-standalone-4.4.0 ${MULE_HOME}
+
 RUN wget https://repository-master.mulesoft.org/nexus/content/repositories/releases/org/mule/distributions/mule-standalone/4.4.0/mule-standalone-4.4.0.zip \
 	&& unzip *.zip \
 	&& ln -s mule-standalone-4.4.0 mule && rm mule-standalone-4.4.0.zip
@@ -38,7 +41,7 @@ WORKDIR /opt/mule-standalone-4.4.0
 #
 
 #RUN /opt/mule-standalone-4.4.0/bin/mule 
-ENTRYPOINT ["/opt/start.sh"]
+ENTRYPOINT ["/opt/mule-standalone-4.4.0/bin/mule"]
 #
 # # use different Default https/http port
 EXPOSE 8881
