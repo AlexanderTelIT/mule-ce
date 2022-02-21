@@ -41,14 +41,13 @@ VOLUME ["/app/mule/logs", "/app/mule/conf", "/app/mule/apps", "/app/mule/domains
 RUN chgrp -R 0 /app/mule/ && \
     chmod -R g+rwX /app/mule/
 
+RUN adduser -D -g "" 185 root -u 185
 
-RUN chmod u+x /app/start.sh
-#USER mule
+USER mule
 RUN echo $PATH
 
 
-ENTRYPOINT ["sh", "/app/mule/bin/mule"]
-
+ENTRYPOINT [ "/app/mule/bin/mule"]
 
 EXPOSE 8881
 EXPOSE 8882
