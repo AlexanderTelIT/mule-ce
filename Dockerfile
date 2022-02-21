@@ -54,7 +54,7 @@ RUN chgrp -R 0 /app/mule-standalone-4.4.0 && \
 
 RUN adduser -D -g "" 185 root -u 185
 
-USER 185
+#USER 185
 
 VOLUME ["/app/mule-standalone-4.4.0/logs", "/app/mule-standalone-4.4.0/conf", "/app/mule-standalone-4.4.0/apps", "/app/mule-standalone-4.4.0/domains"]
 
