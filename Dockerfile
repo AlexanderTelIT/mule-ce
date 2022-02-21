@@ -69,7 +69,8 @@ WORKDIR /app/mule-standalone-4.4.0
 RUN echo $PATH
 
 
-ENTRYPOINT [ "/app/mule-standalone-4.4.0/bin/mule"]
+#ENTRYPOINT [ "/app/mule-standalone-4.4.0/bin/mule"]
+ENTRYPOINT ["/app/start.sh"]
 
 EXPOSE 8881
 EXPOSE 8882
