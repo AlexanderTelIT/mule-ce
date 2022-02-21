@@ -10,9 +10,10 @@ FROM openjdk:11
 WORKDIR /opt
 RUN useradd --user-group --shell /bin/false mule && chown mule /opt 
 USER mule
-RUN wget https://repository-master.mulesoft.org/nexus/content/repositories/releases/org/mule/distributions/mule-standalone/4.4.0/mule-standalone-4.4.0.tar.gz \
-	&& tar xvzf ~/mule-standalone-4.4.0.tar.gz \
-	&& ln -s mule-enterprise-standalone-4.3.0 mule && rm mule-ee-distribution-standalone-4.3.0.zip
+RUN wget https://repository-master.mulesoft.org/nexus/content/repositories/releases/org/mule/distributions/mule-standalone/4.4.0/mule-standalone-4.4.0.zip \
+	&& unzip *.zip \
+	&& ln -s mule-standalone-4.4.0 mule && rm mule-standalone-4.4.0.zip
+
 
 	# to add a license insert the following line
 
