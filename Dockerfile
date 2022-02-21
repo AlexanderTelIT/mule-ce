@@ -35,9 +35,10 @@ RUN wget https://s3.amazonaws.com/new-mule-artifacts/mule-ee-distribution-standa
 # # Define mount points.
 VOLUME ["/opt/mule/logs", "/opt/mule/conf", "/opt/mule/apps", "/opt/mule/domains"]
 
-WORKDIR /opt/mule
+#WORKDIR /opt/mule
 
-ENTRYPOINT ["sh", "/opt/mule/bin/mule"]
+RUN ["chmod","+x", "/start.sh"]
+ENTRYPOINT ["sh", "/start.sh"]
 
 
 EXPOSE 8881
