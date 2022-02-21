@@ -38,6 +38,10 @@ VOLUME ["/app/mule/logs", "/app/mule/conf", "/app/mule/apps", "/app/mule/domains
 
 #WORKDIR /opt/mule
 
+RUN chgrp -R 0 /app/mule/ && \
+    chmod -R g+rwX /app/mule/
+
+
 RUN chmod u+x /app/start.sh
 #USER mule
 RUN echo $PATH
