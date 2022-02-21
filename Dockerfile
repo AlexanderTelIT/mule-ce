@@ -12,6 +12,8 @@ RUN addgroup   --system --gid 1001 appuser
 RUN adduser  --system --uid  1001   --group appuser
 RUN  chmod -R 777 /opt
 
+USER 1001
+
 # Define environment variables.
 ENV MULE_HOME /opt/mule
 
