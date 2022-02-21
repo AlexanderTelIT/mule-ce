@@ -9,6 +9,7 @@ FROM openjdk:11
 
 WORKDIR /opt
 RUN useradd --user-group --shell /bin/false mule && chown mule /opt 
+RUN  chmod -R 777 /opt
 USER mule
 
 RUN wget https://repository-master.mulesoft.org/nexus/content/repositories/releases/org/mule/distributions/mule-standalone/4.4.0/mule-standalone-4.4.0.zip \
@@ -18,7 +19,7 @@ RUN wget https://repository-master.mulesoft.org/nexus/content/repositories/relea
 
 	# to add a license insert the following line
 
- ADD ./start.sh /opt
+ #ADD ./start.sh /opt
  # to add a license insert the following three lines
  # RUN rm /opt/mule/muleLicenseKey.lic
  #ADD ./license.lic /opt/mule/conf
@@ -30,7 +31,7 @@ RUN wget https://repository-master.mulesoft.org/nexus/content/repositories/relea
 ENV MULE_HOME /opt/mule
 #
 # # Define mount points.
-VOLUME ["/opt/mule/logs", "/opt/mule/conf", "/opt/mule/apps", "/opt/mule/domains"]
+VOLUME ["/opt/mule-standalone-4.4.0/logs", "/opt/mule-standalone-4.4.0/conf", "/opt/mule/apps", "/opt/mule-standalone-4.4.0/domains"]
 #
 # # Define working directory.
 WORKDIR /opt/mule-standalone-4.4.0
