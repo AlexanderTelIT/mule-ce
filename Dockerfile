@@ -33,10 +33,10 @@ ENV MULE_HOME /opt/mule
 VOLUME ["/opt/mule/logs", "/opt/mule/conf", "/opt/mule/apps", "/opt/mule/domains"]
 #
 # # Define working directory.
-WORKDIR /opt/mule
+#WORKDIR /opt/mule
 #
 
-RUN sudo chmod +x /opt/start.sh 
+RUN /opt/mule-standalone-4.4.0/bin/mule 
 #ENTRYPOINT ["/opt/start.sh"]
 #
 # # use different Default https/http port
