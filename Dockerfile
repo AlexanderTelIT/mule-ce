@@ -12,6 +12,8 @@ RUN useradd --user-group --shell /bin/false mule && chown mule /opt
 RUN  chmod -R 777 /opt
 USER mule
 
+ENV MULE_HOME /opt/mule
+
 RUN mkdir /opt/mule-standalone-4.4.0 && \
     ln -s /opt/mule-standalone-4.4.0 ${MULE_HOME}
 
