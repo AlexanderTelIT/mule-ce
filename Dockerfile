@@ -25,7 +25,7 @@ WORKDIR /app
 
 
 RUN cd /app wget https://repository-master.mulesoft.org/nexus/content/repositories/releases/org/mule/distributions/mule-standalone/4.4.0/mule-standalone-4.4.0.tar.gz \
-	&& cd /app && tar xvzf app/mule-standalone-4.4.0.tar.gz && rm app/mule-standalone-4.4.0.tar.gz && ln -s /app/mule-standalone-3.8.0 /app/mule
+	&& cd /app && tar xvzf /mule-standalone-4.4.0.tar.gz && rm /mule-standalone-4.4.0.tar.gz && ln -s /app/mule-standalone-4.4.0 /app/mule
 
 	# to add a license insert the following line
 
