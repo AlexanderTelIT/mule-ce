@@ -12,6 +12,10 @@ RUN  apk update \
   && apk add --no-cache nss \
   && rm -rf /var/cache/apk/*
 
+
+
+RUN adduser -D -g "" 185 root -u 185
+
 RUN mkdir /app
 
 ENV MULE_HOME=/app/mule-standalone-4.4.0/
@@ -52,8 +56,6 @@ RUN ln -s /app/mule-standalone-4.4.0 /app/mule
 #RUN chgrp -R 0 /app/mule-standalone-4.4.0 && \
 #    chmod -R g+rwX /app/mule-standalone-4.4.0
 
-
-RUN adduser -D -g "" 185 root -u 185
 RUN chmod -R ugo+rwx /app/mule-standalone-4.4.0
 
 USER 185
