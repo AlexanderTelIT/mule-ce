@@ -3,4 +3,4 @@
 set -e
 
 echo "Starting the mule runtime"
-/opt/mule/bin/mule
+sudo /opt/mule/bin/mule
