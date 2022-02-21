@@ -17,7 +17,7 @@ RUN wget https://repository-master.mulesoft.org/nexus/content/repositories/relea
 
 	# to add a license insert the following line
 
- ADD ./start.sh /opt/mule
+ ADD ./start.sh /opt
  # to add a license insert the following three lines
  # RUN rm /opt/mule/muleLicenseKey.lic
  #ADD ./license.lic /opt/mule/conf
@@ -34,7 +34,7 @@ VOLUME ["/opt/mule/logs", "/opt/mule/conf", "/opt/mule/apps", "/opt/mule/domains
 # # Define working directory.
 WORKDIR /opt/mule
 #
-CMD [ "./start.sh" ]
+CMD [ "/opt/start.sh" ]
 #
 # # use different Default https/http port
 EXPOSE 8881
