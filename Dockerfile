@@ -54,7 +54,7 @@ RUN ln -s /app/mule-standalone-4.4.0 /app/mule
 
 
 RUN adduser -D -g "" 185 root -u 185
-RUN chmod -R  ugo+rwx foldername
+RUN chmod -R  /app/mule-standalone-4.4.0
 
 USER 185
 
