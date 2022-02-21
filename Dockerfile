@@ -6,7 +6,7 @@ FROM alpine:latest
 RUN mkdir /app
 
 WORKDIR /app
-RUN useradd --user-group --shell /bin/false mule && chown mule /app 
+#RUN useradd --user-group --shell /bin/false mule && chown mule /app 
 #RUN  chmod -R 777 /opt
 
     
@@ -43,7 +43,7 @@ RUN chgrp -R 0 /app/mule/ && \
 
 RUN adduser -D -g "" 185 root -u 185
 
-USER mule
+USER 185
 RUN echo $PATH
 
 
