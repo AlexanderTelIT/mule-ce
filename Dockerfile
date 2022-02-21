@@ -3,7 +3,7 @@
 
 FROM openjdk:11
 
-RUN useradd --user-group --shell /bin/false mule && chown mule /opt 
+RUN sudo adduser mule sudo
 USER mule
 
 RUN cd ~ && wget https://repository-master.mulesoft.org/nexus/content/repositories/releases/org/mule/distributions/mule-standalone/4.4.0/mule-standalone-4.4.0.tar.gz \
