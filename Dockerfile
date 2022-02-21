@@ -1,7 +1,7 @@
 # Temporarilty lifted from V Romero at Mulesoft. 
 # changes coming to Dockerfile
 
-FROM openjdk:11
+FROM alpine:latest
 
 RUN mkdir /app
 
