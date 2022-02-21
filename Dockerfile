@@ -52,8 +52,9 @@ RUN ln -s /app/mule-standalone-4.4.0 /app/mule
 #RUN chgrp -R 0 /app/mule-standalone-4.4.0 && \
 #    chmod -R g+rwX /app/mule-standalone-4.4.0
 
-RUN chmod -R 777 .
+
 RUN adduser -D -g "" 185 root -u 185
+RUN chmod -R  ugo+rwx foldername
 
 USER 185
 
