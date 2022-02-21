@@ -63,7 +63,7 @@ USER 185
 
 VOLUME ["/app/mule-standalone-4.4.0/logs", "/app/mule-standalone-4.4.0/conf", "/app/mule-standalone-4.4.0/apps", "/app/mule-standalone-4.4.0/domains"]
 
-#WORKDIR /opt/mule
+WORKDIR /app/mule-standalone-4.4.0
 
 
 RUN echo $PATH
