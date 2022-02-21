@@ -13,9 +13,6 @@ RUN  chmod -R 777 /opt
 USER mule
 
 ENV MULE_HOME /opt/mule
-
-RUN mkdir /opt/mule-standalone-4.4.0 && \
-    ln -s /opt/mule-standalone-4.4.0 ${MULE_HOME}
     
 RUN chmod -R g+rwX /opt/mule-standalone-4.4.0
     
