@@ -1,0 +1,28 @@
+# Temporarilty lifted from V Romero at Mulesoft. 
+# changes coming to Dockerfile
+
+FROM openjdk:11
+
+RUN mkdir /app
+
+ENV MULE_HOME=/app/mule-standalone-4.4.0/
+WORKDIR /app
+
+RUN cd  /app && wget https://repository-master.mulesoft.org/nexus/content/repositories/releases/org/mule/distributions/mule-standalone/4.4.0/mule-standalone-4.4.0.tar.gz && \
+    tar xvzf mule-standalone-4.4.0.tar.gz && \
+    rm mule-standalone-4.4.0.tar.gz	
+
+
+VOLUME ["/app/mule-standalone-4.4.0/logs", "/app/mule-standalone-4.4.0/conf", "/app/mule-standalone-4.4.0/apps", "/app/mule-standalone-4.4.0/domains"]
+
+WORKDIR /app/mule-standalone-4.4.0
+
+
+ENTRYPOINT [ "/app/mule-standalone-4.4.0/bin/mule"]
+
+EXPOSE 8881
+EXPOSE 8882
+EXPOSE 8084
+EXPOSE 8085
+EXPOSE 8091
+EXPOSE 8090
