@@ -14,12 +14,13 @@ USER mule
 
 ENV MULE_HOME /opt/mule
     
-RUN chmod -R g+rwX /opt/mule-standalone-4.4.0
     
 
 RUN wget https://repository-master.mulesoft.org/nexus/content/repositories/releases/org/mule/distributions/mule-standalone/4.4.0/mule-standalone-4.4.0.zip \
 	&& unzip *.zip \
 	&& ln -s mule-standalone-4.4.0 mule && rm mule-standalone-4.4.0.zip
+
+RUN chmod -R g+rwX /opt/mule-standalone-4.4.0
 
 
 	# to add a license insert the following line
