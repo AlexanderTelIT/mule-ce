@@ -37,7 +37,7 @@ VOLUME ["/opt/mule/logs", "/opt/mule/conf", "/opt/mule/apps", "/opt/mule/domains
 
 WORKDIR /opt/mule
 
-ENTRYPOINT ["sh", "/opt/start.sh"]
+ENTRYPOINT ["sh", "/opt/mule/bin/mule"]
 
 
 EXPOSE 8881
