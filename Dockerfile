@@ -64,7 +64,7 @@ VOLUME ["/app/mule-standalone-4.4.0/logs", "/app/mule-standalone-4.4.0/conf", "/
 RUN echo $PATH
 
 
-CMD [ "/app/mule-standalone-4.4.0/bin/mule"]
+ENTRYPOINT [ "/app/mule-standalone-4.4.0/bin/mule"]
 
 EXPOSE 8881
 EXPOSE 8882
