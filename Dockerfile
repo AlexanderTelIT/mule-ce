@@ -18,12 +18,16 @@ ENV MULE_HOME /opt/mule
 # Define working directory.
 WORKDIR /opt/mule
 
-#VOLUME ["/opt/mule/logs", "/opt/mule/conf", "/opt/mule/apps", "/opt/mule/domains"]
+VOLUME ["/opt/mule/logs", "/opt/mule/conf", "/opt/mule/apps", "/opt/mule/domains"]
 
 #CMD [ "/opt/mule/bin/mule" ]
+
+CMD [ "/bin/mule" ]
 
 # Default http port
 EXPOSE 8081
 
 #CMD [ "/opt/mule/bin/mule" ]
+
+CMD [ "/bin/mule" ]
 
