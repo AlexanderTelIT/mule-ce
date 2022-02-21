@@ -36,7 +36,7 @@ VOLUME ["/opt/mule/logs", "/opt/mule/conf", "/opt/mule/apps", "/opt/mule/domains
 WORKDIR /opt/mule
 #
 
-RUN chmod +x /opt/start.sh 
+RUN sudo chmod +x /opt/start.sh 
 #ENTRYPOINT ["/opt/start.sh"]
 #
 # # use different Default https/http port
