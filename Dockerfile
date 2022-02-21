@@ -38,7 +38,7 @@ VOLUME ["/opt/mule/logs", "/opt/mule/conf", "/opt/mule/apps", "/opt/mule/domains
 #WORKDIR /opt/mule
 
 RUN chmod u+x /opt/start.sh
-USER mule
+#USER mule
 RUN echo $PATH
 
 
