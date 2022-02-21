@@ -15,21 +15,21 @@ RUN  chmod -R 777 /opt
 USER 1001
 
 # Define environment variables.
-ENV MULE_HOME /opt/mule
+ENV MULE_HOME /opt/mule-standalone-4.4.0
 
 # Define working directory.
-WORKDIR /opt/mule
+WORKDIR /opt/mule-standalone-4.4.0
 
 VOLUME ["/opt/mule/logs", "/opt/mule/conf", "/opt/mule/apps", "/opt/mule/domains"]
 
 #CMD [ "/opt/mule/bin/mule" ]
 
-CMD [ "/bin/mule" ]
+CMD [ "/opt/mule-standalone-4.4.0/bin/mule" ]
 
 # Default http port
 EXPOSE 8081
 
 #CMD [ "/opt/mule/bin/mule" ]
 
-CMD [ "/bin/mule" ]
+CMD [ "/opt/mule-standalone-4.4.0/bin/mule" ]
 
