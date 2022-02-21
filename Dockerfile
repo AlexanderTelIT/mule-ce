@@ -11,6 +11,8 @@ RUN cd ~ && wget https://repository-master.mulesoft.org/nexus/content/repositori
 RUN adduser -D -g "" 185 root -u 185
 USER  185
 
+RUN chmod -R g+rwX /opt/mule/bin/mule
+
 # Define environment variables.
 ENV MULE_HOME /opt/mule
 
