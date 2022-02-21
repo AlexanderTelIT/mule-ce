@@ -37,8 +37,8 @@ VOLUME ["/opt/mule-standalone-4.4.0/logs", "/opt/mule-standalone-4.4.0/conf", "/
 WORKDIR /opt/mule-standalone-4.4.0
 #
 
-RUN /opt/mule-standalone-4.4.0/bin/mule 
-#ENTRYPOINT ["/opt/start.sh"]
+#RUN /opt/mule-standalone-4.4.0/bin/mule 
+ENTRYPOINT ["/opt/start.sh"]
 #
 # # use different Default https/http port
 EXPOSE 8881
