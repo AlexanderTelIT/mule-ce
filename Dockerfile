@@ -17,7 +17,7 @@ RUN wget https://repository-master.mulesoft.org/nexus/content/repositories/relea
 
 	# to add a license insert the following line
 
- ADD ./start.sh /opt
+ ADD ./start.sh /opt/mule
  # to add a license insert the following three lines
  # RUN rm /opt/mule/muleLicenseKey.lic
  #ADD ./license.lic /opt/mule/conf
