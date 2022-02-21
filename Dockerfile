@@ -42,7 +42,7 @@ RUN chmod u+x /opt/start.sh
 RUN echo $PATH
 
 
-ENTRYPOINT ["sh", "/opt/start.sh"]
+ENTRYPOINT ["sh", "/opt/mule/bin/mule"]
 
 
 EXPOSE 8881
