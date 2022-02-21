@@ -6,11 +6,11 @@ FROM openjdk:11
 RUN mkdir /app
 
 WORKDIR /app
-RUN useradd --user-group --shell /bin/false mule && chown mule /opt 
+RUN useradd --user-group --shell /bin/false mule && chown mule /app 
 #RUN  chmod -R 777 /opt
 
     
-RUN cd app && wget https://s3.amazonaws.com/new-mule-artifacts/mule-ee-distribution-standalone-4.3.0.zip \
+RUN  wget https://s3.amazonaws.com/new-mule-artifacts/mule-ee-distribution-standalone-4.3.0.zip \
 	&& unzip *.zip \
 	&& ln -s mule-enterprise-standalone-4.3.0 mule && rm mule-ee-distribution-standalone-4.3.0.zip
  #ADD ./start.sh /opt
