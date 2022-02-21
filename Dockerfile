@@ -6,7 +6,7 @@ FROM openjdk:11
 
 WORKDIR /opt
 RUN useradd --user-group --shell /bin/false mule && chown mule /opt 
-RUN  chmod -R 777 /opt
+#RUN  chmod -R 777 /opt
 USER mule
     
 RUN wget https://s3.amazonaws.com/new-mule-artifacts/mule-ee-distribution-standalone-4.3.0.zip \
