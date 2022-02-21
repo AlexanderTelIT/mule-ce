@@ -10,7 +10,7 @@ RUN cd ~ && wget https://repository-master.mulesoft.org/nexus/content/repositori
 
 RUN addgroup   --system --gid 1001 appuser
 RUN adduser  --system --uid  1001   --group appuser
-RUN  chmod -R 777 appuser:appuser /opt
+RUN  chmod -R 777 /opt
 
 # Define environment variables.
 ENV MULE_HOME /opt/mule
