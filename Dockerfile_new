@@ -17,6 +17,7 @@ VOLUME ["/app/mule-standalone-4.4.0/logs", "/app/mule-standalone-4.4.0/conf", "/
 
 WORKDIR /app/mule-standalone-4.4.0
 
+RUN chmod -R ugo+rwx /app/
 
 ENTRYPOINT [ "/app/mule-standalone-4.4.0/bin/mule"]
 
