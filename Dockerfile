@@ -43,7 +43,7 @@ WORKDIR /opt/mule-standalone-4.4.0
 #
 
 #RUN /opt/mule-standalone-4.4.0/bin/mule 
-ENTRYPOINT ["/opt/mule-standalone-4.4.0/bin/mule"]
+
 #
 # # use different Default https/http port
 EXPOSE 8881
@@ -52,3 +52,5 @@ EXPOSE 8084
 EXPOSE 8085
 EXPOSE 8091
 EXPOSE 8090
+
+ENTRYPOINT ["/opt/mule-standalone-4.4.0/bin/mule"]
