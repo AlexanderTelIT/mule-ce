@@ -57,4 +57,6 @@ EXPOSE 8085
 EXPOSE 8091
 EXPOSE 8090
 
+RUN chmod +rx /opt/mule-standalone-4.4.0/bin/mule
+
 ENTRYPOINT ["/opt/mule-standalone-4.4.0/bin/mule"]
