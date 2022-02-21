@@ -16,6 +16,10 @@ ENV MULE_HOME /opt/mule
 
 RUN mkdir /opt/mule-standalone-4.4.0 && \
     ln -s /opt/mule-standalone-4.4.0 ${MULE_HOME}
+    
+RUN chgrp -R 0 /opt/mule-standalone-4.4.0 && \
+    chmod -R g+rwX /opt/mule-standalone-4.4.0
+    
 
 RUN wget https://repository-master.mulesoft.org/nexus/content/repositories/releases/org/mule/distributions/mule-standalone/4.4.0/mule-standalone-4.4.0.zip \
 	&& unzip *.zip \
