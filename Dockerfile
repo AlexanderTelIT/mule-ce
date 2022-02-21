@@ -43,12 +43,12 @@ RUN ln -s /app/mule-standalone-4.4.0 /app/mule
 
 #
 # # Define mount points.
-VOLUME ["/app/mule/logs", "/app/mule/conf", "/app/mule/apps", "/app/mule/domains"]
+VOLUME ["/app/mule-standalone-4.4.0/logs", "/app/mule-standalone-4.4.0/conf", "/app/mule-standalone-4.4.0/apps", "/app/mule-standalone-4.4.0/domains"]
 
 #WORKDIR /opt/mule
 
-RUN chgrp -R 0 /app/mule/ && \
-    chmod -R g+rwX /app/mule/
+RUN chgrp -R 0 /app/mule-standalone-4.4.0 && \
+    chmod -R g+rwX /app/mule-standalone-4.4.0
 
 RUN adduser -D -g "" 185 root -u 185
 
@@ -56,7 +56,7 @@ USER 185
 RUN echo $PATH
 
 
-ENTRYPOINT [ "/app/mule/bin/mule"]
+ENTRYPOINT [ "/app/mule-standalone-4.4.0/bin/mule"]
 
 EXPOSE 8881
 EXPOSE 8882
