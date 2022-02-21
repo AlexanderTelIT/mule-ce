@@ -14,7 +14,7 @@ RUN  apk update \
 
 RUN mkdir /app
 
-ENV MULE_HOME=/app/mule
+ENV MULE_HOME=/app/mule-standalone-4.4.0/
 WORKDIR /app
 #RUN useradd --user-group --shell /bin/false mule && chown mule /app 
 #RUN  chmod -R 777 /opt
