@@ -21,7 +21,7 @@ ENV MULE_HOME /opt/mule-standalone-4.4.0
 #	&& ln -s mule-standalone-4.4.0 mule && rm mule-standalone-4.4.0.zip
 	
 RUN cd  /opt && wget https://repository-master.mulesoft.org/nexus/content/repositories/releases/org/mule/distributions/mule-standalone/4.4.0/mule-standalone-4.4.0.tar.gz && \
-    tar xvzf /opt/mule-standalone-4.4.0.tar.gz && \
+    tar xvzf mule-standalone-4.4.0.tar.gz && \
     rm mule-standalone-4.4.0.tar.gz	
 
 RUN chmod -R g+rwX /opt/mule-standalone-4.4.0
@@ -58,6 +58,6 @@ EXPOSE 8085
 EXPOSE 8091
 EXPOSE 8090
 
-RUN chmod +rx /opt/mule-standalone-4.4.0/bin/mule
+#RUN chmod +rx /opt/mule-standalone-4.4.0/bin/mule
 
-ENTRYPOINT ["/opt/mule-standalone-4.4.0/bin/mule"]
+ENTRYPOINT ["/bin/mule"]
