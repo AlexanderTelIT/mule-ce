@@ -3,17 +3,18 @@
 
 FROM openjdk:11
 
+RUN mkdir /app
 
-WORKDIR /opt
+WORKDIR /app
 RUN useradd --user-group --shell /bin/false mule && chown mule /opt 
 #RUN  chmod -R 777 /opt
 
     
-RUN wget https://s3.amazonaws.com/new-mule-artifacts/mule-ee-distribution-standalone-4.3.0.zip \
+RUN cd app && wget https://s3.amazonaws.com/new-mule-artifacts/mule-ee-distribution-standalone-4.3.0.zip \
 	&& unzip *.zip \
 	&& ln -s mule-enterprise-standalone-4.3.0 mule && rm mule-ee-distribution-standalone-4.3.0.zip
  #ADD ./start.sh /opt
- COPY start.sh /opt
+ COPY start.sh /app
 #RUN cd  /opt && wget https://repository-master.mulesoft.org/nexus/content/repositories/releases/org/mule/distributions/mule-standalone/4.4.0/mule-standalone-4.4.0.tar.gz && \
 #    tar xvzf mule-standalone-4.4.0.tar.gz && \
 #    rm mule-standalone-4.4.0.tar.gz	
@@ -33,16 +34,16 @@ RUN wget https://s3.amazonaws.com/new-mule-artifacts/mule-ee-distribution-standa
 
 #
 # # Define mount points.
-VOLUME ["/opt/mule/logs", "/opt/mule/conf", "/opt/mule/apps", "/opt/mule/domains"]
+VOLUME ["/app/mule/logs", "/app/mule/conf", "/app/mule/apps", "/app/mule/domains"]
 
 #WORKDIR /opt/mule
 
-RUN chmod u+x /opt/start.sh
+RUN chmod u+x /app/start.sh
 #USER mule
 RUN echo $PATH
 
 
-ENTRYPOINT ["sh", "/opt/mule/bin/mule"]
+ENTRYPOINT ["sh", "/app/mule/bin/mule"]
 
 
 EXPOSE 8881
