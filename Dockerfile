@@ -19,10 +19,13 @@ WORKDIR /app
 #	&& ln -s mule-enterprise-standalone-4.3.0 mule && rm mule-ee-distribution-standalone-4.3.0.zip
  #ADD ./start.sh /opt
  COPY start.sh /app
-RUN cd  /app && wget https://repository-master.mulesoft.org/nexus/content/repositories/releases/org/mule/distributions/mule-standalone/4.4.0/mule-standalone-4.4.0.tar.gz && \
-    tar xvzf mule-standalone-4.4.0.tar.gz && \
-    rm mule-standalone-4.4.0.tar.gz	
+#RUN cd  /app && wget https://repository-master.mulesoft.org/nexus/content/repositories/releases/org/mule/distributions/mule-standalone/4.4.0/mule-standalone-4.4.0.tar.gz && \
+#    tar xvzf mule-standalone-4.4.0.tar.gz && \
+#    rm mule-standalone-4.4.0.tar.gz	
 
+
+RUN cd wget https://repository-master.mulesoft.org/nexus/content/repositories/releases/org/mule/distributions/mule-standalone/4.4.0/mule-standalone-4.4.0.tar.gz \
+	&& cd /app && tar xvzf ~/mule-standalone-4.4.0.tar.gz && rm app/mule-standalone-4.4.0.tar.gz && ln -s /app/mule-standalone-3.8.0 /app/mule
 
 	# to add a license insert the following line
 
