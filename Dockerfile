@@ -37,8 +37,8 @@ VOLUME ["/opt/mule/logs", "/opt/mule/conf", "/opt/mule/apps", "/opt/mule/domains
 
 #WORKDIR /opt/mule
 
-RUN ["chmod","+x", "/start.sh"]
-ENTRYPOINT ["sh", "/start.sh"]
+RUN ["chmod","+x", "/opt/start.sh"]
+ENTRYPOINT ["sh", "/opt/start.sh"]
 
 
 EXPOSE 8881
