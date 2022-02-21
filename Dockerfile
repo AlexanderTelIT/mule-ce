@@ -12,8 +12,8 @@ USER mule
 RUN wget https://s3.amazonaws.com/new-mule-artifacts/mule-ee-distribution-standalone-4.3.0.zip \
 	&& unzip *.zip \
 	&& ln -s mule-enterprise-standalone-4.3.0 mule && rm mule-ee-distribution-standalone-4.3.0.zip
- ADD ./start.sh /opt
-
+ #ADD ./start.sh /opt
+ COPY start.sh /opt
 #RUN cd  /opt && wget https://repository-master.mulesoft.org/nexus/content/repositories/releases/org/mule/distributions/mule-standalone/4.4.0/mule-standalone-4.4.0.tar.gz && \
 #    tar xvzf mule-standalone-4.4.0.tar.gz && \
 #    rm mule-standalone-4.4.0.tar.gz	
@@ -38,7 +38,7 @@ VOLUME ["/opt/mule/logs", "/opt/mule/conf", "/opt/mule/apps", "/opt/mule/domains
 #WORKDIR /opt/mule
 
 RUN echo $PATH
-RUN sudo chmod u+x /opt/start.sh
+RUN chmod u+x /opt/start.sh
 
 ENTRYPOINT ["sh", "/opt/start.sh"]
 
