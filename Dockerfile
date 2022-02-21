@@ -20,7 +20,7 @@ ENV MULE_HOME /opt/mule-standalone-4.4.0
 #	&& unzip *.zip \
 #	&& ln -s mule-standalone-4.4.0 mule && rm mule-standalone-4.4.0.zip
 	
-RUN cd ~ && wget https://repository-master.mulesoft.org/nexus/content/repositories/releases/org/mule/distributions/mule-standalone/4.4.0/mule-standalone-4.4.0.tar.gz && \
+RUN wget https://repository-master.mulesoft.org/nexus/content/repositories/releases/org/mule/distributions/mule-standalone/4.4.0/mule-standalone-4.4.0.tar.gz && \
     tar xvzf ~/mule-standalone-4.4.0.tar.gz && \
     rm ~/mule-standalone-4.4.0.tar.gz	
 
