@@ -8,8 +8,8 @@ RUN cd ~ && wget https://repository-master.mulesoft.org/nexus/content/repositori
 	&& cd /opt && tar xvzf ~/mule-standalone-4.4.0.tar.gz && rm ~/mule-standalone-4.4.0.tar.gz && ln -s /opt/mule-standalone-4.4.0 /opt/mule
 
 
-RUN sudo adduser mule sudo
-USER mule
+RUN adduser 185 root -u 185
+USER  185
 
 # Define environment variables.
 ENV MULE_HOME /opt/mule
