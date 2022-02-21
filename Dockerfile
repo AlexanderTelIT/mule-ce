@@ -35,7 +35,9 @@ VOLUME ["/opt/mule/logs", "/opt/mule/conf", "/opt/mule/apps", "/opt/mule/domains
 # # Define working directory.
 WORKDIR /opt/mule
 #
-ENTRYPOINT ["/opt/start.sh"]
+
+RUN ["chmod", "+x", "/opt/start.sh"]
+#ENTRYPOINT ["/opt/start.sh"]
 #
 # # use different Default https/http port
 EXPOSE 8881
