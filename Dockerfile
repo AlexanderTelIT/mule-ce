@@ -36,9 +36,11 @@ RUN wget https://s3.amazonaws.com/new-mule-artifacts/mule-ee-distribution-standa
 VOLUME ["/opt/mule/logs", "/opt/mule/conf", "/opt/mule/apps", "/opt/mule/domains"]
 
 #WORKDIR /opt/mule
+
+RUN chmod u+x /opt/start.sh
 USER mule
 RUN echo $PATH
-#RUN chmod u+x /opt/start.sh
+
 
 ENTRYPOINT ["sh", "/opt/start.sh"]
 
