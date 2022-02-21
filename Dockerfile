@@ -33,7 +33,7 @@ ENV MULE_HOME /opt/mule
 VOLUME ["/opt/mule/logs", "/opt/mule/conf", "/opt/mule/apps", "/opt/mule/domains"]
 #
 # # Define working directory.
-#WORKDIR /opt/mule
+WORKDIR /opt/mule-standalone-4.4.0
 #
 
 RUN /opt/mule-standalone-4.4.0/bin/mule 
