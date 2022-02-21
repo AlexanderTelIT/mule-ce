@@ -5,6 +5,7 @@ FROM alpine:latest
 
 RUN mkdir /app
 
+ENV MULE_HOME=/app/mule
 WORKDIR /app
 #RUN useradd --user-group --shell /bin/false mule && chown mule /app 
 #RUN  chmod -R 777 /opt
